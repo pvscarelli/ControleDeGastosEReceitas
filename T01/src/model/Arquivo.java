@@ -21,6 +21,7 @@ public class Arquivo {
     InputStream is;
     InputStreamReader isr;
     BufferedReader br;
+    String caminho = "C:/Users/A/Desktop/POO/T01.csv";
 
     /**
      * Grava o movimento (receita ou despesa) trazido pelo parâmetro
@@ -31,7 +32,7 @@ public class Arquivo {
     public void salvar(Movimento m1) throws IOException {
 
         try {
-            os = new FileOutputStream("C:/Users/A/Desktop/T01.csv", true);
+            os = new FileOutputStream(caminho, true);
             osw = new OutputStreamWriter(os);
             bw = new BufferedWriter(osw);
         } catch (FileNotFoundException e) {
@@ -60,7 +61,7 @@ public class Arquivo {
 
         ArrayList<Movimento> movimentos = new ArrayList<>();
         try {
-            is = new FileInputStream("C:/Users/A/Desktop/T01.csv");
+            is = new FileInputStream(caminho);
             isr = new InputStreamReader(is);
             br = new BufferedReader(isr);
 
